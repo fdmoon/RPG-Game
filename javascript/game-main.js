@@ -1,14 +1,10 @@
-function Character(health, power, counter) {
+function Character(name, health, power, counter) {
+	this.name = name;
 	this.baseHP = health;
 	this.health = this.baseHP;
 	this.basepwr = power;
 	this.attack = this.basepwr;
 	this.counter = counter;
-
-	this.initCondition = function() {
-		this.health = this.baseHP;
-		this.attack = this.basepwr;
-	}
 
 	this.getHealthPercent = function() {
 		return Math.floor(this.health / this.baseHP * 100);
@@ -43,15 +39,21 @@ $(document).ready(function() {
 		"YOU'VE WON... GAME OVER!",
 	];
 
-	var charRyu = new Character(120, 8, 0);
-	var charKen = new Character(180, 0, 25);
-	var charChunli = new Character(100, 0, 5);
-	var charGuile = new Character(150, 0, 20);
+	var charRyu = new Character("RYU", 120, 8, 18);
+	var charKen = new Character("KEN", 180, 6, 20);
+	var charChunli = new Character("CHUN-LI", 110, 23, 5);
+	var charGuile = new Character("GUILE", 150, 7, 15);
 
 	var charArray = [charRyu, charKen, charChunli, charGuile];
 
+	for(var i=0; i<charArray.length; i++) {
+		$("#"+charArray[i].name).text(charArray[i].health);
+		$("#"+charArray[i].name).attr("style", "width:"+charArray[i].getHealthPercent()+"%");
+	}
+
 	var yourChar;
 	var oppoChar;
+	var remainOpponent = charArray.length - 1;
 
 	// gameStep
 	// - 0: select character
@@ -107,11 +109,51 @@ $(document).ready(function() {
 
 	$("#attack").on("click", function() {
 		if(gameStep === 2) {
-			
-			$("#actDesc").html(actDescription[gameStep]);
+			var dispMsg = ("You attacked " + oppoChar.name + " for " + yourChar.attack + " damage. ");
+			if(!oppoChar.setDamage(yourChar.attack)) {
+				// opponent dead
+				dispMsg += (oppoChar.name + " is DEAD.");
+
+
+				$("#oppochar").html("<h3>Opponent</h3>");
+
+				remainOpponent--;
+				if(remainOpponent <= 0) {
+					gameStep = 4;
+					dispMsg = actDescription[gameStep];
+				}
+				else {
+					gameStep = 1;
+				}
+			}
+			else {
+				$("#"+oppoChar.name).text(oppoChar.health);
+				$("#"+oppoChar.name).attr("style", "width:"+oppoChar.getHealthPercent()+"%");
+
+				dispMsg += (yourChar.name + " attacked you back for " + oppoChar.counter + " damage.");
+				if(!yourChar.setDamage(oppoChar.counter)) {
+					// your character dead
+
+					$("#"+yourChar.name).text("0");
+					$("#"+yourChar.name).attr("style", "width:0%");
+
+					gameStep = 3;
+					dispMsg = actDescription[gameStep];
+				}
+				else {
+					$("#"+yourChar.name).text(yourChar.health);
+					$("#"+yourChar.name).attr("style", "width:"+yourChar.getHealthPercent()+"%");
+				}
+			}
+
+			$("#actDesc").html(dispMsg);
 		}
 		else {
 			$("#actDesc").html(actDescription[gameStep]);
+		}
+
+		if((gameStep === 3) || (gameStep === 4)) {
+			$("#actDesc").attr("style", "color:#f00;")
 		}
 	});
 
@@ -119,3 +161,4 @@ $(document).ready(function() {
 		location.reload();
 	});
 });
+
