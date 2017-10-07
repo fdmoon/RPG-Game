@@ -6,18 +6,36 @@
 
 	<title>RPG Game</title>
 
-	<link rel="icon" sizes="32x32" href="">
+	<link rel="icon" sizes="32x32" href="images/icon_streetfighter.jpg">
 
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Shrikhand" rel="stylesheet">
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	<script src="javascript/game-main.js"></script>
 </head>
+
 <body>
+	<header>
+		<p id="pageHead">
+			Street Fighter RPG 
+			<img id="logoImg" src="images/logo_streetfighter.jpg">
+		</p>
+	</header>
+
 	<div id="wrapper" class="content">
+		<section class="row">
+			<div class="col-md-2">&nbsp;</div>
+			<div class="col-md-8">
+				<h2 id="gameInst">&nbsp;</h2>
+			</div>
+			<div class="col-md-2">&nbsp;</div>
+		</section>
+
 		<section class="row">
 			<div class="col-md-2">&nbsp;</div>
 			<div class="col-md-2">
@@ -51,21 +69,41 @@
 			<div class="col-md-2">&nbsp;</div>
 		</section>
 
-		<section class="row">
-			<div class="col-md-2">&nbsp;</div>
-			<h3 class="col-md-4">Your Character</h3>
-			<h3 class="col-md-4">Opponent</h3>
-			<div class="col-md-2">&nbsp;</div>
+		<section>
+			<div class="row">
+				<div class="col-md-2">&nbsp;</div>
+				<div class="col-md-8">
+					<div class="row">
+						<div class="col-md-12">
+							<div id="actBtn">
+								<button id="attack" class="btn btn-primary btn-md grow-button"><span class="glyphicon glyphicon-thumbs-up"></span> Attack</button>
+								<button id="reload" class="btn btn-danger btn-md shrink-button"><span class="glyphicon glyphicon-refresh"></span> Restart</button>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<p id="actDesc">&nbsp;</p>
+						</div>
+					</div>					
+				</div>
+				<div class="col-md-2">&nbsp;</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-2">&nbsp;</div>
+				<div id="yourchar" class="col-md-4">
+					<h3>Your Character</h3>
+				</div>
+				<div id="oppochar" class="col-md-4">
+					<h3>Opponent</h3>
+				</div>
+				<div class="col-md-2">&nbsp;</div>
 			</div>
 		</section>
-		<section class="row">
-			<div class="col-md-2">&nbsp;</div>
-			<div id="yourchar" class="col-md-4">
-			</div>
-			<div id="oppochar" class="col-md-4">
-			</div>
-			<div class="col-md-2">&nbsp;</div>
-		</section>		
+
+				
 	</div>
 </body>
 </html>
+

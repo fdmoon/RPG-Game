@@ -4,6 +4,7 @@
 
 body {
 	position: relative;
+	font-family: 'Shrikhand', cursive;
 }
 
 body:after {
@@ -12,11 +13,26 @@ body:after {
 	position: absolute;
 	top: 0;
 	left: 0;
-	background-image: url(../images/background_1.jpg) ;
+	background-image: url(../images/background_4.jpg);
 	width: 100%;
 	height: 100%;
 	opacity : 0.3;
 	z-index: -1;
+}
+
+#pageHead {
+	color: #fff;
+	background-image: url(../images/background_4.jpg);
+	font-family: 'Permanent Marker', cursive;
+	font-size: 5em !important;
+	text-align: center;
+	padding: 10px 0;
+}
+
+#logoImg {
+	width: 150px;
+	height: auto;
+	transform: rotate(-20deg);
 }
 
 .charGrp {
@@ -28,15 +44,19 @@ body:after {
 }
 
 .charImg {
-	width: 100px;
-	height: 150px;
-	margin: 0 0 5px 0;
+	width: 50px;
+	height: 75px;
+	margin: 5px 0;
+}
+
+#actBtn {
+	padding: 20px 0;
 }
 
 #yourchar, #oppochar {
-	height: 300px;
+	height: 200px;
 	text-align: center;
 	border: 3px #000 solid;
-	padding-bottom: 30px;
+	margin-bottom: 50px;
 }
 
