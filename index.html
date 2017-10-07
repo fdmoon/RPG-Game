@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>RPG Game</title>
+
+	<link rel="icon" sizes="32x32" href="">
+
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<script src="javascript/game-main.js"></script>
+</head>
+<body>
+	<div id="wrapper" class="content">
+		<section class="row">
+			<div class="col-md-2">&nbsp;</div>
+			<div class="col-md-2">
+				<div class="charGrp" idxval="0" selchar="no">
+					<strong>RYU</strong>
+					<img class="charImg" src="images/character_ryu.jpg">
+					<div id="ryuProg" class="progress progress-bar progress-bar-success" role="progressbar" style="width:100%">100%</div>
+				</div>				
+			</div>
+			<div class="col-md-2">
+				<div class="charGrp" idxval="1" selchar="no">
+					<strong>KEN</strong>
+					<img class="charImg" src="images/character_ken.jpg">
+					<div id="kenProg" class="progress progress-bar progress-bar-success" role="progressbar" style="width:100%">100%</div>		
+				</div>				
+			</div>
+			<div class="col-md-2">
+				<div class="charGrp" idxval="2" selchar="no">
+					<strong>CHUN LI</strong>
+					<img class="charImg" src="images/character_chunli.jpg">
+					<div id="chunliProg" class="progress progress-bar progress-bar-success" role="progressbar" style="width:100%">100%</div>
+				</div>			
+			</div>
+			<div class="col-md-2">
+				<div class="charGrp" idxval="3" selchar="no">	
+					<strong>GUILE</strong>
+					<img class="charImg" src="images/character_guile.jpg">
+					<div id="guileProg" class="progress progress-bar progress-bar-success" role="progressbar" style="width:100%">100%</div>		
+				</div>					
+			</div>
+			<div class="col-md-2">&nbsp;</div>
+		</section>
+
+		<section class="row">
+			<div class="col-md-2">&nbsp;</div>
+			<h3 class="col-md-4">Your Character</h3>
+			<h3 class="col-md-4">Opponent</h3>
+			<div class="col-md-2">&nbsp;</div>
+			</div>
+		</section>
+		<section class="row">
+			<div class="col-md-2">&nbsp;</div>
+			<div id="yourchar" class="col-md-4">
+			</div>
+			<div id="oppochar" class="col-md-4">
+			</div>
+			<div class="col-md-2">&nbsp;</div>
+		</section>		
+	</div>
+</body>
+</html>

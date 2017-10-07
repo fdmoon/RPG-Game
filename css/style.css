@@ -1,0 +1,42 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	position: relative;
+}
+
+body:after {
+	content : "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-image: url(../images/background_1.jpg) ;
+	width: 100%;
+	height: 100%;
+	opacity : 0.3;
+	z-index: -1;
+}
+
+.charGrp {
+	text-align: center;
+	background-color: #fff;
+	border: 5px #000 solid;
+	padding-bottom: 25px;
+	margin: 10px;
+}
+
+.charImg {
+	width: 100px;
+	height: 150px;
+	margin: 0 0 5px 0;
+}
+
+#yourchar, #oppochar {
+	height: 300px;
+	text-align: center;
+	border: 3px #000 solid;
+	padding-bottom: 30px;
+}
+
