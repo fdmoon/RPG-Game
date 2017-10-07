@@ -41,7 +41,7 @@ $(document).ready(function() {
 
 	var charRyu = new Character("RYU", 120, 8, 18);
 	var charKen = new Character("KEN", 180, 6, 20);
-	var charChunli = new Character("CHUN-LI", 110, 23, 5);
+	var charChunli = new Character("CHUN-LI", 110, 10, 5);
 	var charGuile = new Character("GUILE", 150, 7, 15);
 
 	var charArray = [charRyu, charKen, charChunli, charGuile];
